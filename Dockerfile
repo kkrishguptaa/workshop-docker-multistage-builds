@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 golang:1.21.6-alpine@sha256:fd78f2fb1e49bcf343079bbbb851c936a18fc694df993cbddaa24ace0cc724c5
+FROM --platform=linux/amd64 golang:1.21.6-alpine as builder
 
 WORKDIR /app
 
@@ -8,6 +8,12 @@ RUN go get
 
 RUN go build -tags=jsoniter -o app .
 
-EXPOSE 8080
+FROM alpine:latest
+
+WORKDIR /app
+
+COPY --from=builder /app/app .
 
 CMD ["./app"]
+
+EXPOSE 8080
