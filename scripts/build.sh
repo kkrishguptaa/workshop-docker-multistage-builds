@@ -44,7 +44,7 @@ success "Removed old binaries"
 
 CrossBuild=false
 AppVersion=""
-AppName="go-gin-api-template"
+AppName="workshop-docker-multistage-builds"
 GoBuildTags="jsoniter"
 OutDir="$cwd/bin"
 
