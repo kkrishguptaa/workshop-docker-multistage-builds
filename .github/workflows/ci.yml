@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
       - name: Setup Go
         uses: actions/setup-go@cdcb36043654635271a94b9a6d1392de5bb323a7 # v5
         with:
@@ -40,7 +40,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
       - name: Setup Go
         uses: actions/setup-go@cdcb36043654635271a94b9a6d1392de5bb323a7 # v5
         with:
@@ -61,7 +61,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
       - name: Setup Go
         uses: actions/setup-go@cdcb36043654635271a94b9a6d1392de5bb323a7 # v5
         with:
@@ -94,13 +94,13 @@ jobs:
       PR_BRANCH: release-ci-${{ github.sha }}
 
     steps:
-      - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4
+      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
       - name: Create Branch
         run: |
           git checkout -b ${{ env.PR_BRANCH }}
 
       - name: Create Changelog
-        uses: TriPSs/conventional-changelog-action@f04dac1fd07687cec8ea302937ca588b33786e98 # v5
+        uses: TriPSs/conventional-changelog-action@3a392e9aa44a72686b0fc13259a90d287dd0877c # v5
         id: changelog
         with:
           github-token: ${{ github.token }}
@@ -141,7 +141,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
 
       - name: Setup Go
         uses: actions/setup-go@cdcb36043654635271a94b9a6d1392de5bb323a7 # v5
@@ -181,17 +181,17 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
 
       - name: Login docker.io
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20 # v3
+        uses: docker/login-action@0d4c9c5ea7693da7b068278f7b52bda2a190a446 # v3
         with:
           registry: docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Login ghcr.io
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20 # v3
+        uses: docker/login-action@0d4c9c5ea7693da7b068278f7b52bda2a190a446 # v3
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
