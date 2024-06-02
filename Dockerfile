@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 golang:1.22.3-alpine@sha256:f1fe698725f6ed14eb944dc587591f134632ed47fc0732ec27c7642adbe90618 as builder
+FROM --platform=linux/amd64 golang:1.22.3-alpine@sha256:7e788330fa9ae95c68784153b7fd5d5076c79af47651e992a3cdeceeb5dd1df0 as builder
 
 WORKDIR /app
 
@@ -8,7 +8,7 @@ RUN go get
 
 RUN go build -tags=jsoniter -o app .
 
-FROM alpine:latest@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
+FROM alpine:latest@sha256:77726ef6b57ddf65bb551896826ec38bc3e53f75cdde31354fbffb4f25238ebd
 
 WORKDIR /app
 
