@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 golang:1.22.3-alpine@sha256:7e788330fa9ae95c68784153b7fd5d5076c79af47651e992a3cdeceeb5dd1df0 as builder
+FROM --platform=linux/amd64 golang:1.22.4-alpine@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb as builder
 
 WORKDIR /app
 
