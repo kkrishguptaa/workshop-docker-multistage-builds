@@ -8,7 +8,7 @@ RUN go get
 
 RUN go build -tags=jsoniter -o app .
 
-FROM alpine:latest@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+FROM alpine:latest@sha256:6eee963cdd9be4b3423dd221bc4b5b0458a9c459990c0b5095b5aee7c43e92a2
 
 WORKDIR /app
 
